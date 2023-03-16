@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <unistd.h>
+
+void mensagem();
+
+int main(){
+
+    return 0;
+}
+
+
+void mensagem(){
+
+    printf("minha identificacao........: %d\n", getpid());
+    printf("identificacao do meu pai...: %d\n", getppid());
+}
