@@ -3,8 +3,26 @@
 
 void mensagem();
 
+void mostra_ids_filhos();
+
+int filhos[10];
+
 int main(){
 
+    int i;
+    mensagem();
+
+    for(i=0; i <10; i++){
+        filhos[i] = fork();
+        if (filhos[i] > 0){
+            wait();
+        }else{
+            mensagem();
+            exit(0);
+        }
+    }
+    mostra_ids_filhos();
+    
     return 0;
 }
 
@@ -13,4 +31,12 @@ void mensagem(){
 
     printf("minha identificacao........: %d\n", getpid());
     printf("identificacao do meu pai...: %d\n", getppid());
+}
+
+void mostra_ids_filhos(){
+
+    int i;
+        for(i=0; i<10; i++){
+            printf("Filhos %d -> [%d]\n", i, filhos[i]);
+        }
 }
