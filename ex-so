@@ -12,7 +12,7 @@ int main(){
     int i;
     mensagem();
 
-    for(i=0; i <10; i++){
+    for( i = 0; i < 10; i++ ){
         filhos[i] = fork();
         if (filhos[i] > 0){
             wait();
@@ -22,10 +22,9 @@ int main(){
         }
     }
     mostra_ids_filhos();
-    
+
     return 0;
 }
-
 
 void mensagem(){
 
@@ -36,7 +35,9 @@ void mensagem(){
 void mostra_ids_filhos(){
 
     int i;
-        for(i=0; i<10; i++){
+
+    printf("Identificação dos processos filhos: \n ");
+        for( i = 0; i < 10; i++ ){
             printf("Filhos %d -> [%d]\n", i, filhos[i]);
         }
 }

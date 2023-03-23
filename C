@@ -4,9 +4,10 @@
 void mensagem();
 
 int main(){
-    if(fork() > 0)
+    if(fork() > 0){
         mensagem();
-
+        wait();
+    }
     else
         mensagem();
 
@@ -15,6 +16,6 @@ int main(){
 
 void mensagem(){
 
-    printf("minha identificacao ...: %d\n", getpid());
+    printf("minha identificacao........: %d\n", getpid());
     printf("identificacao do meu pai...: %d\n", getppid());
 }
