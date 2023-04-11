@@ -6,6 +6,7 @@ def pai(id):
 
 def filho(id):
     print(f"Eu sou o processo ({os.getpid}) filho de ({os.getppid})")
+    
 
 def main():
     id = os.fork()
